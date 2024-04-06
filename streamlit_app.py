@@ -66,14 +66,18 @@
 #     main()
 
 import streamlit as st
-from joblib import load
+import joblib
 import pandas as pd
 
 # Load the XGBoost model
-xgboost_model = joblib.load('car_price_predictor')
+xgboost_model = joblib.load('car_price_predictor.joblib')
 
 # Define a function to preprocess input data
-
+def preprocess_input(data):
+    # Drop the 'Age' column
+    data.drop('Age', axis=1, inplace=True)
+    # Perform any other preprocessing steps if necessary
+    return data
 
 # Define the Streamlit app
 def main():
