@@ -3,4 +3,6 @@ pandas
 streamlit
 joblib
 xgboost
-pandas
+scikit-learn
+datetime
+
