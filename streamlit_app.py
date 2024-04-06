@@ -47,7 +47,7 @@ def main():
     fuel_type = st.selectbox('Fuel Type', ['Petrol', 'Diesel', 'CNG'])
     seller_type = st.selectbox('Seller Type', ['Dealer', 'Individual'])
     transmission = st.selectbox('Transmission', ['Manual', 'Automatic'])
-    owner = st.number_input('Owner')
+    owner = st.number_input('Owner',min_value=0, max_value=1)
 
     car_data = pd.DataFrame({'Year': [year],
                              'Present_Price': [present_price],
