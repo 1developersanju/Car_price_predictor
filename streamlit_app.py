@@ -70,7 +70,7 @@ import joblib
 import pandas as pd
 
 # Load the XGBoost model
-xgboost_model = joblib.load('xgboost_model.joblib')
+xgboost_model = joblib.load('xgboost_model')
 
 # Define a function to preprocess input data
 def preprocess_input(data):
