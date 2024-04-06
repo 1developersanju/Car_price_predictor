@@ -70,7 +70,7 @@ import joblib
 import pandas as pd
 
 # Load the XGBoost model
-xgboost_model = joblib.load('car_price_predictor.joblib')
+xgboost_model = joblib.load('xgboost_model.joblib')
 
 # Define a function to preprocess input data
 def preprocess_input(data):
@@ -115,3 +115,4 @@ def main():
 # Run the Streamlit app
 if __name__ == '__main__':
     main()
+
