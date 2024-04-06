@@ -1,13 +1,9 @@
-
-import streamlit as st
-import joblib
-import pandas as pd
-
-# Load the XGBoost model
-xgboost_model = joblib.load('xgboost_model')
-
 # Define a function to preprocess input data
-
+def preprocess_input(data):
+    # Drop the 'Age' column
+    data.drop('Age', axis=1, inplace=True)
+    # Perform any other preprocessing steps if necessary
+    return data
 
 # Define the Streamlit app
 def main():
@@ -35,14 +31,9 @@ def main():
     })
 
     # Preprocess the input data
-    input_data_processed = preprocess_input(input_data.copy())
+    input_data_processed = preprocess_input(input_data.copy())  # This line raises an error
 
     # Make prediction
     if st.button('Predict Selling Price'):
         predicted_price = xgboost_model.predict(input_data_processed)
         st.success(f'Predicted Selling Price: {predicted_price[0]}')
-
-# Run the Streamlit app
-if __name__ == '__main__':
-    main()
-
