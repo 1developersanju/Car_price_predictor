@@ -49,9 +49,7 @@ def main():
     transmission = st.selectbox('Transmission', ['Manual', 'Automatic'])
     owner = st.number_input('Owner')
 
-    car_data = pd.DataFrame({'Car_Name': [car_name],
-                             'Year': [year],
-                             'Selling_Price': [selling_price],
+    car_data = pd.DataFrame({'Year': [year],
                              'Present_Price': [present_price],
                              'Kms_Driven': [kms_driven],
                              'Fuel_Type': [fuel_type],
